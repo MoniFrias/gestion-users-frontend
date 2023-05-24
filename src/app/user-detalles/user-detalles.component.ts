@@ -24,7 +24,7 @@ export class UserDetallesComponent {
     .subscribe(
       dato => {
         this.user = dato;
-        swal(`Detalles del User ${this.user.name}`)
+        swal(`User details: ${this.user.name}`)
       });
 
   }

@@ -31,13 +31,6 @@ export class ActualizarUserComponent {
   }
 
   actualizarUser(){
-    /*this.idUser = this.route.snapshot.params['id']; //obtener ID de la ruta
-    this.userService.actualizarUser(this.idUser,this.user)
-    .subscribe(
-      dato => {
-        this.irAListaUser();
-      }, error => console.log(error)
-    );*/
 
     this.userService.obtenerUserById(this.user.idUser).subscribe(
       dato => {
@@ -61,11 +54,10 @@ export class ActualizarUserComponent {
                     );
 
                 }else{
-                  swal(` no actualiza porque ya existe user con ese email: ${this.user.email}`)
+                  swal(`Already exits a user with that email: ${this.user.email}`)
                 }
 
               }else if(this.userfound.email != this.user.email){
-                swal(`va actualizar: ${this.user.email}`)
                 this.userService.actualizarUser(this.idUser,this.user)
                 .subscribe(
                   dato => {
@@ -78,7 +70,7 @@ export class ActualizarUserComponent {
           );
 
         } else{
-          swal(`No existe un usuario con ese id: ${this.user.email}`)
+          swal(`No exits a user with that ID: ${this.user.email}`)
         }
 
       });

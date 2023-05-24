@@ -1,5 +1,5 @@
 <div class="col-md-6 offset-md-3">
-  <h3 class="text-center">Registro User</h3>
+  <h3 class="text-center">Add User</h3>
   <form (ngSubmit)="onSubmit()" #userForm="ngForm">
     <div class="form-group">
       <label>Name: </label>
@@ -8,13 +8,13 @@
 
       <div class="alert alert-danger" *ngIf= "name.invalid && (name.dirty || name.touched)">
         <div *ngIf = "name.errors.required">
-          Digite su nombre porfavor!
+          Enter your name!
         </div>
         <div *ngIf = "name.errors.minlength">
-          El nombre debe contener al menos 3 caracteres
+          Name must contain at least 3 characters
         </div>
         <div *ngIf = "name.errors.maxlength">
-          El nombre debe contener maximo 20 caracteres
+          Name must contain a maximum of 20 characters
         </div>
       </div>
     </div>
@@ -26,13 +26,13 @@
 
       <div class="alert alert-danger" *ngIf= "apellido.invalid && (apellido.dirty || apellido.touched)">
         <div *ngIf = "apellido.errors.required">
-          Digite su apellido porfavor!
+          Enter your last name!
         </div>
         <div *ngIf = "apellido.errors.minlength">
-          El apellido debe contener al menos 3 caracteres
+          last name must contain at least 3 characters
         </div>
         <div *ngIf = "apellido.errors.maxlength">
-          El apellido debe contener maximo 20 caracteres
+          Last name must contain a maximum of 20 characters
         </div>
       </div>
     </div>
@@ -44,10 +44,10 @@
 
       <div class="alert alert-danger" *ngIf= "phone.invalid && (phone.dirty || phone.touched)">
         <div *ngIf = "phone.errors.required">
-          Digite su phone porfavor!
+          Enter your phone number!
         </div>
         <div *ngIf = "phone.errors.pattern">
-          El phone debe contener 10 caracteres
+          The phone number must contain 10 characters
         </div>
       </div>
     </div>
@@ -59,7 +59,7 @@
 
       <div class="alert alert-danger" *ngIf= "birthdate.invalid && (birthdate.dirty || birthdate.touched)">
         <div *ngIf = "birthdate.errors.required">
-          Digite su birthdate porfavor!
+          Enter your birthdate!
         </div>
       </div>
     </div>
@@ -71,7 +71,7 @@
 
       <div class="alert alert-danger" *ngIf= "gender.invalid && (gender.dirty || gender.touched)">
         <div *ngIf = "gender.errors.required">
-          Digite su gender porfavor!
+          Enter your gender!
         </div>
       </div>
     </div>
@@ -83,7 +83,7 @@
 
       <div class="alert alert-danger" *ngIf= "rol.invalid && (rol.dirty || rol.touched)">
         <div *ngIf = "rol.errors.required">
-          Digite su rol porfavor!
+          Enter your rol!
         </div>
       </div>
     </div>
@@ -96,10 +96,10 @@
 
       <div class="alert alert-danger" *ngIf= "email.invalid && (email.dirty || email.touched)">
         <div *ngIf = "email.errors.required">
-          Digite su email porfavor!
+          Enter your email!
         </div>
         <div *ngIf = "email.errors.pattern">
-          Digite su email con el siguiente formato: user100@gmail.com
+          Enter your email in the following format: user100@gmail.com
         </div>
 
       </div>
@@ -112,12 +112,12 @@
 
       <div class="alert alert-danger" *ngIf= "password.invalid && (password.dirty || password.touched)">
         <div *ngIf = "password.errors.required">
-          Digite su password porfavor!
+          Enter your password!
         </div>
       </div>
     </div>
 
     <br>
-    <button class="btn btn-success" [disabled]= "!userForm.form.valid">Guardar</button>
+    <button class="btn btn-success" [disabled]= "!userForm.form.valid">Save</button>
   </form>
 </div>

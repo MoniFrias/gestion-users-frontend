@@ -26,14 +26,14 @@ export class ListaUserComponent {
 
   eliminarUser(idUser: number){
     swal({
-      title: '¿Estas seguro?',
-      text: "Confirma si deseas eliminar el user",
+      title: '¿Are you sure?',
+      text: "Confirm if you want to delete the user?",
       type: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Si, eliminar',
-      cancelButtonText: 'No, cancelar',
+      confirmButtonText: 'Yes, Delete',
+      cancelButtonText: 'No, Cancel',
       confirmButtonClass: 'btn btn-success',
       cancelButtonClass: 'btn btn-danger',
       buttonsStyling: true
@@ -44,8 +44,8 @@ export class ListaUserComponent {
           console.log(dato);
           this.obtenerUsers();
           swal(
-            'User eliminado',
-            'el User a sido eliminado con exito',
+            'User Deleted',
+            'The user has been deleted successfully',
             'success'
           )
         })
