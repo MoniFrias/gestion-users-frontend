@@ -1,0 +1,123 @@
+<div class="col-md-6 offset-md-3">
+  <h3 class="text-center">Actualizar User</h3>
+  <form (ngSubmit)= "onSubmit()" #userForm="ngForm">
+    <div class="form-group">
+      <label>Name: </label>
+      <input type="text" class="form-control" id="name" [(ngModel)] = "user.name" name="name"
+              required="true" minlength="3" maxlength="20" placeholder="digite name"  #name ="ngModel">
+
+      <div class="alert alert-danger" *ngIf= "name.invalid && (name.dirty || name.touched)">
+        <div *ngIf = "name.errors.required">
+          Digite su nombre porfavor!
+        </div>
+        <div *ngIf = "name.errors.minlength">
+          El nombre debe contener al menos 3 caracteres
+        </div>
+        <div *ngIf = "name.errors.maxlength">
+          El nombre debe contener maximo 20 caracteres
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Last Name: </label>
+      <input type="text" class="form-control" id="lastname" [(ngModel)]="user.lastname" name="lastname"
+              required="true" minlength="3" maxlength="20" placeholder="Ingrese apellido" #apellido ="ngModel">
+
+      <div class="alert alert-danger" *ngIf= "apellido.invalid && (apellido.dirty || apellido.touched)">
+        <div *ngIf = "apellido.errors.required">
+          Digite su apellido porfavor!
+        </div>
+        <div *ngIf = "apellido.errors.minlength">
+          El apellido debe contener al menos 3 caracteres
+        </div>
+        <div *ngIf = "apellido.errors.maxlength">
+          El apellido debe contener maximo 20 caracteres
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Phone: </label>
+      <input type="text" class="form-control" id="phone" [(ngModel)]="user.phone" name="phone"
+              required="true" pattern="[0-9]{10}" placeholder="Ingrese telefono" #phone ="ngModel">
+
+      <div class="alert alert-danger" *ngIf= "phone.invalid && (phone.dirty || phone.touched)">
+        <div *ngIf = "phone.errors.required">
+          Digite su phone porfavor!
+        </div>
+        <div *ngIf = "phone.errors.pattern">
+          El phone debe contener 10 caracteres
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Birthdate: </label>
+      <input type="text" class="form-control" id="birthdate" [(ngModel)]="user.birthdate" name="birthdate"
+              required="true" placeholder="Ingrese birthdate" #birthdate ="ngModel">
+
+      <div class="alert alert-danger" *ngIf= "birthdate.invalid && (birthdate.dirty || birthdate.touched)">
+        <div *ngIf = "birthdate.errors.required">
+          Digite su birthdate porfavor!
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Gender: </label>
+      <input type="text" class="form-control" id="gender" [(ngModel)]="user.gender" name="gender"
+            required="true" placeholder="Ingrese gender" #gender ="ngModel">
+
+      <div class="alert alert-danger" *ngIf= "gender.invalid && (gender.dirty || gender.touched)">
+        <div *ngIf = "gender.errors.required">
+          Digite su gender porfavor!
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Rol: </label>
+      <input type="text" class="form-control" id="rol" [(ngModel)]="user.rol" name="rol"
+              required="true" placeholder="Ingrese rol" #rol ="ngModel">
+
+      <div class="alert alert-danger" *ngIf= "rol.invalid && (rol.dirty || rol.touched)">
+        <div *ngIf = "rol.errors.required">
+          Digite su rol porfavor!
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email: </label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="user.email" name="email"
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+              required="true" placeholder="Ingrese email" #email ="ngModel">
+
+      <div class="alert alert-danger" *ngIf= "email.invalid && (email.dirty || email.touched)">
+        <div *ngIf = "email.errors.required">
+          Digite su email porfavor!
+        </div>
+        <div *ngIf = "email.errors.pattern">
+          Digite su email con el siguiente formato: user100@gmail.com
+        </div>
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Password: </label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="user.password" name="password"
+              required="true" placeholder="Ingrese password" #password ="ngModel">
+
+      <div class="alert alert-danger" *ngIf= "password.invalid && (password.dirty || password.touched)">
+        <div *ngIf = "password.errors.required">
+          Digite su password porfavor!
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <button class="btn btn-success" [disabled]= "!userForm.form.valid">Guardar</button>
+  </form>
+</div>
